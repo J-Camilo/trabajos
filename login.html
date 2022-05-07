@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+    <header x-data="{ open: false }" class="header">
+        <div class="header__logo">
+            Enter section
+        </div>
+        
+        <img class="header__button-nav--open" id="foto1" x-on:click="open = true" src="/images/588a64e7d06f6719692a2d11.png.crdownload">
+        <nav class="nav"  x-bind:class="open ? 'nav--show' : ''">
+        
+            <div class="nav__button" x-on:click="open = false">
+            <img  class="header__button-nav--close" id="foto2" src="/images/e21f81313a3615becdc7457a058c3cb9.png">
+            </div>
+            
+            <ul class="nav__ul">
+                <li class="nav__item"><a href="/index.html"  >Home</a></li>
+                <li class="nav__item"><a href="login.html" id="cam">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <form id="register" class="login">
+                <h2 id="sub">Login</h2>       
+                <input id="userName" class="forms" type="email" placeholder="userName"> <span id="emailOK"></span>
+                <p><span id="name" class="error"></span></p>
+
+                <input id="password"  class="forms" type="password" minlength="8" placeholder="Insert your password"> 
+                <p><span id="pass" class="error"></span></p>
+
+                <div class="buttons">
+                    <button class="myButton" type="submit">Login</button>
+                    <a href="register.html">Register</a>
+                </div>
+        </fieldset>
+    </form>
+    </main>
+
+    <script src="App.js"></script>
+</body>
+</html>

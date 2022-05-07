@@ -1,0 +1,90 @@
+<!-- Login-register-dom
+
+En el presente ejercicio realizaremos una simulación de un formulario de registro básico y sencillo.
+
+Para ello tendremos en cuenta los siguientes elementos:
+
+1. los input deberán ser validados en tiempo real teniendo en cuenta los requisitos a continuación:
+* el nombre debe contener mínimo 3 caracteres y no puede contener números o caracteres alfanuméricos(Para efecttos del ejercicio, validar: * - + / $).
+* El usuario no debe existir(debe estar disponible).
+* La coincidencia entre los dos campos de password(Garantizar que el password no se vea, esto por medio de JS).
+
+2. En el momento del Login, validar si el usuario no existe sugerirle que se registre, o si los datos son incorrectos mostrar alerta.
+
+3. No deben haber campos vacíos.Todos los campos deben ser obligatorios.
+
+--
+Helpers:
+
++ Tener en cuenta el uso del event.preventDefault(), pues cada objeto del Dom tiene información de valor que nos puede ser útil.
++ Se pueden usar objetos u arreglos para guardar la información(Quién desee puede investigar y hacer uso de Local Storage para guardar los datos, pero este punto es opcional).
+
+---
+La base en maquetación puede ser adaptada a gusto del desarrollador. El diseño debe ser responsive.
+Fecha de inicio: 03 de mayo de 2022.
+Fecha de entrega: 06 de mayo de 2022 10:00 pm.
+Entregar link del repositorio. -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+    <header x-data="{ open: false }" class="header">
+        <div class="header__logo">
+            Not registered yet
+        </div>
+        
+        <img class="header__button-nav--open" id="foto1" x-on:click="open = true" src="/images/588a64e7d06f6719692a2d11.png.crdownload">
+        <nav class="nav"  x-bind:class="open ? 'nav--show' : ''">
+        
+            <div class="nav__button" x-on:click="open = false">
+            <img  class="header__button-nav--close" id="foto2" src="/images/e21f81313a3615becdc7457a058c3cb9.png">
+            </div>
+            
+            <ul class="nav__ul">
+                <li class="nav__item"><a href="/index.html">Home</a></li>
+                <li class="nav__item"><a href="login.html" id="cam">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <form id="register" method="dialog">  
+            <h2 id="sub">Register</h2>
+            <input id="Name" class="forms" type="text" minlength="3" placeholder="Full Name">
+            <p><span id="nameOK" class="error"></span></p>
+
+            <input id="userName2" class="forms" type="email"   placeholder="userName">
+            <p><span id="emailOK"  class="error"></span></p>
+
+            
+            <input id="password2" class="forms" type="password" minlength="8"  placeholder="Insert your password">
+            <p><span id="passOK"  class="error"></span></p>
+
+            <input id="password3" class="forms" type="password" minlength="8" placeholder="confirm your password">
+            <p><span id="checkOK"  class="error"></span></p>
+            
+
+            <div class="buttons">
+                <button id="login" class="myButton" type="submit" >Check in </button>
+            </div>
+
+        </fieldset>
+    </form>
+    </main>
+
+    <script src="App.js"></script>
+</body>
+</html>
