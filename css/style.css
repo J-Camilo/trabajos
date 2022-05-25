@@ -1,0 +1,40 @@
+#up{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.content2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3em;
+    background-color: rgb(83, 83, 83);
+    border-radius: 20px;
+    border: 6px solid;
+    width: 30%;
+}
+.image{
+    width: 30%;
+}
+hr{
+    width: 90%;
+}
+
+#generate{
+    background-color: aquamarine;
+    border-radius: 6px;
+    width: 10em;
+    font-size: 20px;
+}
+#generate:hover{
+    background-color: brown;
+    transition: all 300ms;
+}
+
+#content{
+    padding: 50px;
+}
+
+
+
